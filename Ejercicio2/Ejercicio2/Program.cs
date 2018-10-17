@@ -31,19 +31,37 @@ namespace Ejercicio2
                 }
                 else if (numero.Contains(","))
                 {
+                    try
+                    {
                     numDecimal = Convert.ToDouble(numero);
                     decim.Add(numDecimal);
                     contDecimal++;
                     break;
 
+                    }
+                    catch (FormatException ex)
+                    {
+                        ex.ToString();
+                        Console.WriteLine("llama al equipo A. ");
+                    }
+
+
                 }
                 else if (numero.Contains("."))
                 {
-                    numDecimal = Convert.ToDouble(numero);
-                    numDecimal = numDecimal / 10;
-                    decim.Add(numDecimal);
-                    contDecimal++;
-                    break;
+                    try
+                    {
+                        numDecimal = Convert.ToDouble(numero);
+                        numDecimal = numDecimal / 10;
+                        decim.Add(numDecimal);
+                        contDecimal++;
+                        break;
+                    }
+                    catch(FormatException ex)
+                    {
+                        ex.ToString();
+                        Console.WriteLine("LLama al equipo A.");
+                    }
                 }
                 else
                 {
