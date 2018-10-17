@@ -21,15 +21,20 @@ namespace Ejercicio2
 
             do
             {
-
                 Console.WriteLine("Introduce un número, decimal o entero. ");
                 numero = Console.ReadLine();
 
-                if (numero.Contains(","))
+
+                if (numero.Contains("-"))
+                {
+                    break;
+                }
+                else if (numero.Contains(","))
                 {
                     numDecimal = Convert.ToDouble(numero);
                     decim.Add(numDecimal);
                     contDecimal++;
+                    break;
 
                 }
                 else if (numero.Contains("."))
@@ -38,17 +43,21 @@ namespace Ejercicio2
                     numDecimal = numDecimal / 10;
                     decim.Add(numDecimal);
                     contDecimal++;
-
-                }
-                else if (numero.Contains("-"))
-                {
                     break;
                 }
                 else
                 {
+                    try
+                    {
                     numEntero = Convert.ToInt32(numero);
                     entero.Add(numEntero);
                     contEntero++;
+                    }
+                    catch (FormatException ex)
+                    {
+                        ex.ToString();
+                        Console.WriteLine("Llama al equipo A. ");
+                    }
 
                 }
 
@@ -62,14 +71,14 @@ namespace Ejercicio2
             }
 
             int suma = 0;
-            foreach(int x in entero)
+            foreach (int x in entero)
             {
                 suma += x;
             }
-            Console.WriteLine("La suma de los números enteros es: " +suma);
+            Console.WriteLine("La suma de los números enteros es: " + suma);
 
             double sumaEnt = 0;
-            foreach(int x in entero)
+            foreach (int x in entero)
             {
                 Convert.ToDouble(x);
                 sumaEnt += x;
@@ -77,12 +86,12 @@ namespace Ejercicio2
             }
 
             double sumaDecim = 0;
-            foreach(double x in decim)
+            foreach (double x in decim)
             {
                 sumaDecim += x;
             }
-            Console.WriteLine("La media de todos los números introducidos es: " +(sumaEnt + sumaDecim) / (contDecimal + contEntero));
-            
+            Console.WriteLine("La media de todos los números introducidos es: " + (sumaEnt + sumaDecim) / (contDecimal + contEntero));
+
             Console.ReadLine();
         }
     }
