@@ -13,7 +13,7 @@ namespace Elene_de_Troya
         private List<Griego> Ocupantes=new List<Griego>();
         
 
-        private Caballo(int capacidad)
+        private Caballo()
         {
             this.capacidad = 20;
         }
@@ -46,18 +46,31 @@ namespace Elene_de_Troya
             return (-1);
         }
 
-        //public string MostrarGuerreroPosicion(int pos)
+        public int MostrarGuerreroPosicion(int pos)
+        {
+            pos = pos - 1;
+            try
+            {
+               Ocupantes.ElementAt(pos);
+            }
+            catch
+            {
+                Console.WriteLine("EEEEEEEEEERROR. ");
+            }
+            return pos;
+        }
+
+        //public void MontarseEnCaballo(Griego guerrero)
+        //{
+        //    Ocupantes.Add(guerrero);
+        //    Console.WriteLine("Guerrero griego " + guerrero + " montado en caballo. ");
+        //}
+
+
+        //public string MostrarCaballo(int capacidad, int ocupacion, Griego guerrero)
         //{
             
-        //    foreach (Griego n in Ocupantes)
-        //    {
-        //        if (pos == Ocupantes.ElementAt<Griego>(n))
-        //        {
-        //            return 
-        //        }
-        //    }
         //}
-         
 
 
 
