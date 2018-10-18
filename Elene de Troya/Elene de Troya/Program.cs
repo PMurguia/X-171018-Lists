@@ -29,6 +29,7 @@ namespace Elene_de_Troya
             //int edad = Int32.Parse(Console.ReadLine());
             //Console.WriteLine("Fuerza: ");
             //int fuerza = Int32.Parse(Console.ReadLine());
+            //
 
             t1.MostrarDatos();
             Console.WriteLine();
