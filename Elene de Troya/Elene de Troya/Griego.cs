@@ -160,5 +160,7 @@ namespace Elene_de_Troya
             Muerto(this.muerto);
 
         }
+
+
     }
 }
