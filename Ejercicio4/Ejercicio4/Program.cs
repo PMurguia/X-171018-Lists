@@ -43,35 +43,35 @@ namespace Ejercicio4
             Console.ReadLine();
             int option = 0;
             int suma = 3;
-            //do
-            //{
-            //    Console.WriteLine("¿Qué quieres hacer?\n1. Introducir otro artista y disco\n2. Salir del programa.");
-            //    option = Int32.Parse(Console.ReadLine());
+            do
+            {
+                Console.WriteLine("¿Qué quieres hacer?\n1. Introducir otro artista y disco\n2. Salir del programa.");
+                option = Int32.Parse(Console.ReadLine());
 
-            //    switch (option)
-            //    {
-            //        case 1:
+                switch (option)
+                {
+                    case 1:
 
-            //            Console.WriteLine("Dime un cantante famoso, ");
-            //            artista = Console.ReadLine();
-            //            Console.WriteLine();
-            //            Console.WriteLine("Ahora su disco más vendido. ");
-            //            disco = Console.ReadLine();
-            //            Console.WriteLine();
-            //            Cantante = new Cantante(artista, disco);
+                        Console.WriteLine("Dime un cantante famoso, ");
+                        artista = Console.ReadLine();
+                        Console.WriteLine();
+                        Console.WriteLine("Ahora su disco más vendido. ");
+                        disco = Console.ReadLine();
+                        Console.WriteLine();
+                        cantantesFamosos.Add(new Cantante(artista, disco));
 
-            //            foreach (Cantante x in cantantesFamosos)
-            //            {
-            //                Console.WriteLine(x.GetNombre());
-            //                Console.WriteLine(x.GetDiscoMasVendido());
-            //                Console.WriteLine();
-            //            }
-            //            break;
+                        foreach (Cantante x in cantantesFamosos)
+                        {
+                            Console.WriteLine(x.GetNombre());
+                            Console.WriteLine(x.GetDiscoMasVendido());
+                            Console.WriteLine();
+                        }
+                        break;
 
-            //        case 2:
-            //            break;
-            //    }
-            //} while (option != 2);
+                    case 2:
+                        break;
+                }
+            } while (option != 2);
         }
     }
 }
